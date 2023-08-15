@@ -7,6 +7,7 @@
 void stack_add(stack_t **n_node, __attribute__((unused))unsigned int ln)
 {
 	stack_t *temp;
+
 	if (n_node == NULL || *n_node == NULL)
 		exit(EXIT_FAILURE);
 	if (head == NULL)

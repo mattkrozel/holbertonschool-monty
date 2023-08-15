@@ -1,5 +1,6 @@
 #include "monty.h"
 
+stack_t *head = NULL;
 /**
  * main - main program file
  * @argc: number of line arguments

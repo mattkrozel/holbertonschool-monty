@@ -46,12 +46,6 @@ void file_r(FILE *fd)
 	n = 0;
 	lay = 0;
 
-	if (fd == NULL)
-	{
-		fprintf(stderr, "Error: Can't open file %d\n", file_l);
-		final_free();
-		exit(EXIT_FAILURE);
-	}
 	for (file_l = 1; getline(&linesp, &n, fd) != EOF; file_l++)
 		lay = tokenator(linesp, file_l, lay);
 	free(linesp);
