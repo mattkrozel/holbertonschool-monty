@@ -98,6 +98,7 @@ void find_f(char *opcode, char *val, int opline, int lay)
 		{"pint", top_print},
 		{"pop", top_pop},
 		{"swap", node_swap},
+		{"add", node_add},
 		{NULL, NULL}
 	};
 	if (opcode[0] == '#')
