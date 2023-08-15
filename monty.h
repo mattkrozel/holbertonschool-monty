@@ -48,6 +48,8 @@ void file_r(FILE *fd);
 int tokenator(char *str, int line_num, int lay);
 void find_f(char *opcode, char *val, int opline, int lay);
 void func_call(op_func f, char *op, char *strval, int ln_num, int lay);
-
+void stack_add(stack_t **n_node, __attribute__((unused))unsigned int ln);
+void stack_print(stack_t **stack, unsigned int ln_num);
+void add_queue(stack_t **n_node, __attribute__((unused))unsigned int ln);
 
 #endif
