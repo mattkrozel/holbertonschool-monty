@@ -63,3 +63,19 @@ void add_queue(stack_t **n_node, __attribute__((unused))unsigned int ln)
 	temp->next = *n_node;
 	(*n_node)->prev = temp;
 }
+
+/**
+ * top_print - prints top pof stack
+ * @stack: pointer to top of stack
+ * @line_num: line number of opcode
+ */
+void top_print(stack_t **stack, unsigned int line_num)
+{
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_num);
+		final_free();
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
+}

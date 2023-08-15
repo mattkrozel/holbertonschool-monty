@@ -95,6 +95,7 @@ void find_f(char *opcode, char *val, int opline, int lay)
 	instruction_t func_list[] = {
 		{"push", stack_add},
 		{"pall", stack_print},
+		{"pint", top_print},
 		{NULL, NULL}
 	};
 	if (opcode[0] == '#')
