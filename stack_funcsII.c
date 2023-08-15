@@ -29,7 +29,7 @@ void node_add(stack_t **stack, unsigned int ln_num)
 	int total;
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, " L%d: can't add, stack too short\n", ln_num);
+		fprintf(stderr, "L%d: can't add, stack too short\n", ln_num);
 		final_free();
 		exit(EXIT_FAILURE);
 	}
