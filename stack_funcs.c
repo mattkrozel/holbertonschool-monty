@@ -87,6 +87,7 @@ void top_print(stack_t **stack, unsigned int line_num)
 void top_pop(stack_t **stack, unsigned int ln_num)
 {
 	stack_t *temp;
+
 	if (stack == NULL || *stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", ln_num);

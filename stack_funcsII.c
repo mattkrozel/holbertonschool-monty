@@ -8,6 +8,7 @@
 void node_swap(stack_t **stack, unsigned int ln_num)
 {
 	stack_t *temp;
+
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", ln_num);
@@ -23,10 +24,15 @@ void node_swap(stack_t **stack, unsigned int ln_num)
 	temp->prev = NULL;
 	*stack = temp;
 }
-
+/**
+ * node_add - adds nodes
+ * @stack: start of stack
+ * @ln_num: line number of opcode
+ */
 void node_add(stack_t **stack, unsigned int ln_num)
 {
 	int total;
+
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", ln_num);
