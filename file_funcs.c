@@ -4,7 +4,7 @@
  * file_o - opens file
  * @file_n: file name
  */
-void file_o( char *file_n)
+void file_o(char *file_n)
 {
 	int check;
 	FILE *fd;
@@ -48,7 +48,7 @@ void file_r(FILE *fd)
 
 	if (fd == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", file_n);
+		fprintf(stderr, "Error: Can't open file %d\n", file_l);
 		final_free();
 		exit(EXIT_FAILURE);
 	}
@@ -61,6 +61,7 @@ void file_r(FILE *fd)
  * @str: string
  * @line_num: line number
  * @lay: format specifier
+ * Return: function to call
  */
 int tokenator(char *str, int line_num, int lay)
 {
@@ -75,7 +76,7 @@ int tokenator(char *str, int line_num, int lay)
 		exit(EXIT_FAILURE);
 	}
 	delim = "\n ";
-	opcode = strtok(file_l, delim);
+	opcode = strtok(str, delim);
 	if (opcode == NULL)
 		return (lay);
 	val = strtok(NULL, delim);
@@ -88,7 +89,7 @@ int tokenator(char *str, int line_num, int lay)
 }
 /**
  * find_f - finds functions
- * @opcode; opcode
+ * @opcode: opcodei
  * @val: value for operation
  * @opline: line number for opcode
  * @lay: format specifier
@@ -104,7 +105,7 @@ void find_f(char *opcode, char *val, int opline, int lay)
 	};
 	if (opcode[0] == '#')
 		return;
-	for (flag = 1; i = 0; func_list[i].opcode != NULL; i++)
+	for (flag = 1, i = 0; func_list[i].opcode != NULL; i++)
 	{
 		if (strcmp(opcode, func_list[i].opcode) == 0)
 		{

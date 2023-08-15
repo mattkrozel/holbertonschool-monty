@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/stat.h>
+#include <ctype.h>
+#include <stdarg.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -37,8 +39,15 @@ typedef struct instruction_s
 } instruction_t;
 
 extern stack_t *head;
+typedef void (*op_func)(stack_t **, unsigned int);
 int main(int argc, char **argv);
 stack_t *make_node(int n);
 void final_free(void);
+void file_o(char *file_n);
+void file_r(FILE *fd);
+int tokenator(char *str, int line_num, int lay);
+void find_f(char *opcode, char *val, int opline, int lay);
+void func_call(op_func f, char *op, char *strval, int ln_num, int lay);
+
 
 #endif

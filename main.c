@@ -1,7 +1,12 @@
 #include "monty.h"
 
-
-int main (int argc, char **argv)
+/**
+ * main - main program file
+ * @argc: number of line arguments
+ * @argv: array of arguments
+ * Return: 0
+ */
+int main(int argc, char **argv)
 {
 	if (argc < 2 || argc > 2)
 	{
@@ -13,7 +18,9 @@ int main (int argc, char **argv)
 	return (0);
 }
 
-
+/**
+ * final_free - frees nodes in stacks
+ */
 void final_free(void)
 {
 	stack_t *temp;
@@ -28,7 +35,11 @@ void final_free(void)
 	}
 }
 
-
+/**
+ * make_node - creats node
+ * @n: to go inside node
+ * Return: pointer to node
+ */
 stack_t *make_node(int n)
 {
 	stack_t *node;
@@ -36,7 +47,7 @@ stack_t *make_node(int n)
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
 	{
-		fprintf("Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		final_free();
 		exit(EXIT_FAILURE);
 	}
