@@ -10,7 +10,7 @@ void node_swap(stack_t **stack, unsigned int ln_num)
 	stack_t *temp;
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", ln_num);
+		fprintf(stderr, "L%d: can't swap an empty stack\n", ln_num);
 		final_free();
 		exit(EXIT_FAILURE);
 	}
@@ -39,4 +39,14 @@ void node_add(stack_t **stack, unsigned int ln_num)
 	(*stack)->n = total;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
+}
+/**
+ * nop - does nothing
+ * @stack: start of stack
+ * @ln_num: line number of opcode
+ */
+void nop(stack_t **stack, unsigned int ln_num)
+{
+	(void)stack;
+	(void)ln_num;
 }

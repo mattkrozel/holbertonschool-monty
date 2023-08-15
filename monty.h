@@ -55,5 +55,5 @@ void top_print(stack_t **stack, unsigned int ln_num);
 void top_pop(stack_t **stack, unsigned int ln_num);
 void node_swap(stack_t **stack, unsigned int ln_num);
 void node_add(stack_t **stack, unsigned int ln_num);
-
+void nop(stack_t **stack, unsigned int ln_num);
 #endif
