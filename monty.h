@@ -52,5 +52,5 @@ void stack_add(stack_t **n_node, __attribute__((unused))unsigned int ln);
 void stack_print(stack_t **stack, unsigned int ln_num);
 void add_queue(stack_t **n_node, __attribute__((unused))unsigned int ln);
 void top_print(stack_t **stack, unsigned int ln_num);
-
+void top_pop(stack_t **stack, unsigned int ln_num);
 #endif

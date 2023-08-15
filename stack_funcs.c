@@ -79,3 +79,23 @@ void top_print(stack_t **stack, unsigned int line_num)
 	}
 	printf("%d\n", (*stack)->n);
 }
+/**
+ * top_pop - removes node from top of stack
+ * @stack: start of stack
+ * @ln_num: line number
+ */
+void top_pop(stack_t **stack, unsigned int ln_num)
+{
+	stack_t *temp;
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", ln_num);
+		final_free();
+		exit(EXIT_FAILURE);
+	}
+	temp = *stack;
+	*stack = temp->next;
+	if (*stack != NULL)
+		(*stack)->prev = NULL;
+	free(temp);
+}
