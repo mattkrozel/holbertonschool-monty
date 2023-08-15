@@ -10,7 +10,7 @@ void node_swap(stack_t **stack, unsigned int ln_num)
 	stack_t *temp;
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't swap an empty stack\n", ln_num);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", ln_num);
 		final_free();
 		exit(EXIT_FAILURE);
 	}
